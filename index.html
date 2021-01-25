@@ -95,16 +95,10 @@
             const withdrawAmountNumber = makeNum("withdraw-amount");
 
             update("current-withdraw",withdrawAmountNumber)
-            updateWithdraw("current-balance",withdrawAmountNumber);
+            update("current-balance", -1*withdrawAmountNumber);
             
             document.getElementById("withdraw-amount").value = "";
         })
-        function updateWithdraw(id,addedNumber){
-            const current = document.getElementById(id).innerText;
-            const currentNumber = parseFloat(current);
-            const totalBalance = currentNumber - addedNumber;
-            document.getElementById(id).innerText = totalBalance;
-        }
     </script>
 </body>
 </html>
